@@ -1,5 +1,5 @@
 (function() {
-    window.task = $('dd a');
+    window.task = document.getElementsByTagName('a');
     window.share_num = 0;
     window.share_timer = null;
     setTimeout(function () {
@@ -10,7 +10,7 @@
             clearInterval(window.share_timer);
             return true;
         }
-        bd_share($(window.task[window.share_num]).attr('href'))
+        bd_share($(window.task[window.share_num]).href)
         window.share_num ++;
     },4500);
     function bd_share(share_url) {
