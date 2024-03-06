@@ -10,8 +10,11 @@
             clearInterval(window.share_timer);
             return true;
         }
-        bd_share(window.task[window.share_num].href);
-        window.share_num ++;
+        var randomNum = Math.floor(Math.random() * 100) + 1;
+        if(randomNum > 50){
+            bd_share(window.task[window.share_num].href);
+            window.share_num ++;
+        }
     },4500);
     function bd_share(share_url) {
         curProtocol = window.location.href.split(':')[0];
